@@ -17,20 +17,23 @@ class LimitGuestPosting
 
     public function limitGuestPosting(Saving $event)
     {
-        
-        $attributes = Arr::get($event->data, 'attributes', []);
-        
-        $post = $event->post;
-        $user = $post->user;
-        $username = $user->username;
+        // İşlemi yapan kullanıcı
+        $actor = $event->actor;
 
+        // Kullanıcı ID'si 1 ile 15 arasındaysa limiti uygulama
+        if ($actor->id >= 1 && $actor->id <= 15) {
+            return;
+        }
+
+        // Kullanıcı adını kontrol et
+        $username = $actor->username;
         if (!preg_match('/^misafir\d{4}$/', $username)) {
             return;
         }
 
-        $count = Post::where('user_id', $user->id)->count();
-       
-        
+        // Kullanıcı gönderi sayısını kontrol et
+        $count = Post::where('user_id', $actor->id)->count();
+
         if ($count >= 3) {
             throw new ValidationException([
                 'Attention' => 'Devam etmek için yeni hesap oluştur.',
