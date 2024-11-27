@@ -194,15 +194,15 @@ var GuestModal = /*#__PURE__*/function (_Modal) {
   var _proto = GuestModal.prototype;
   _proto.oninit = function oninit(vnode) {
     _Modal.prototype.oninit.call(this, vnode);
-    this.message = "Welcome, guest user! Guests are limited to three posts. Please note that guest logins are throttled to 5 minutes since last posting to protect against abuse.";
+    this.message = "Hoş geldin! Misafir olarak 3 gönderi hakkın var. Yorumlar arasında 5 dakika beklemen gerekiyor. Şimdiden keyifli zamanlar geçirmen dileğiyle!";
   };
   _proto.className = function className() {
     return 'GuestModal Modal--small';
   };
   _proto.title = function title() {
     return m("span", null, m("i", {
-      "class": "fa-solid fa-user-large"
-    }), "\xA0\xA0 Welcome Guest");
+      "class": "fas fa-user-large"
+    }), "\xA0\xA0 Hoşgeldin!");
   };
   _proto.content = function content() {
     return m("div", {
