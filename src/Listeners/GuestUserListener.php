@@ -21,7 +21,7 @@ class GuestUserListener {
         $user = $event->user;
 
         // Check if the user is a guest user
-        if (preg_match('/^Guest\d{4}$/', $user->username)) {
+        if (preg_match('/^misafir\d{4}$/', $user->username)) {
          // Do something here
         }   
     }
