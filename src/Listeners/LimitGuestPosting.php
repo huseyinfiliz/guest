@@ -24,7 +24,7 @@ class LimitGuestPosting
         $user = $post->user;
         $username = $user->username;
 
-        if (!preg_match('/^Guest\d{4}$/', $username)) {
+        if (!preg_match('/^misafir\d{4}$/', $username)) {
             return;
         }
 
@@ -33,7 +33,7 @@ class LimitGuestPosting
         
         if ($count >= 3) {
             throw new ValidationException([
-                'Attention' => 'Guest are limited to 3 posts.  Please create a membership to continue.',
+                'Attention' => 'Devam etmek için yeni hesap oluştur.',
             ]);
         }
     }
