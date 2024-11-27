@@ -54,7 +54,7 @@ class GuestController extends AbstractCreateController
                 ->count();
 
         if ($ipCount > 2) {
-            throw new ValidationException([        'Attention' => 'Too many requests made from the same IP. Please wait 5 minutes to create a new guest login or create a new account.',    ]);
+            throw new ValidationException([        'Attention' => 'Devam etmek için yeni hesap oluşturmalısın.',    ]);
         }
         
         $existingUser = User::where('last_ip_address', $request->getAttribute('ipAddress'))->first();
@@ -67,7 +67,7 @@ class GuestController extends AbstractCreateController
          } else {
              
             // If a user with the same IP address does not exist, create a new user
-        $username = 'Guest' . rand(1000, 9999);
+        $username = 'misafir' . rand(1000, 9999);
         $email = $username . '@example.com';
         $password = bin2hex(random_bytes(10));
 
