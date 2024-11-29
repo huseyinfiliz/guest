@@ -21,7 +21,7 @@ class LimitGuestPosting
         $actor = $event->actor;
 
         // Kullanıcı ID'si 1 ile 15 arasındaysa limiti uygulama
-        if ($actor->id >= 1 && $actor->id <= 15) {
+        if ($actor->id >= 1 && $actor->id <= 99) {
             return;
         }
 
