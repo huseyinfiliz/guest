@@ -158,7 +158,7 @@ __webpack_require__.r(__webpack_exports__);
       };
     }()
   }, m("i", {
-    "class": "fa-solid fa-user"
+    "class": "fas fa-user"
   }), "\xA0  Guest Login"), 100);
 });
 
