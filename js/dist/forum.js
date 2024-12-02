@@ -67,7 +67,7 @@ var LogInButton = /*#__PURE__*/function (_Button) {
               method: 'POST',
               url: '/api/guest',
               data: {
-                username: 'Guest'
+                username: 'misafir'
               }
             });
           case 10:
@@ -94,7 +94,7 @@ var LogInButton = /*#__PURE__*/function (_Button) {
 
 $(window).on("load", function () {
   if (window.localStorage.getItem("reloadAfterPageLoad") === "true") {
-    var regEx = /^Guest\d{4}$/;
+    var regEx = /^misafir\d{4}$/;
     var guestName = app.session.user.username();
     if (regEx.test(guestName)) {
       app.modal.show(_modals_GuestModal_js__WEBPACK_IMPORTED_MODULE_6__["default"]);
@@ -139,7 +139,7 @@ __webpack_require__.r(__webpack_exports__);
             case 0:
               e.preventDefault();
               app.session.user = {
-                username: 'Guest',
+                username: 'misafir',
                 canPost: function canPost() {
                   return true;
                 },
@@ -159,7 +159,7 @@ __webpack_require__.r(__webpack_exports__);
     }()
   }, m("i", {
     "class": "fas fa-user"
-  }), "\xA0  Guest Login"), 100);
+  }), "\xA0  Misafir Girişi"), 100);
 });
 
 /***/ }),
