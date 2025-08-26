@@ -1,0 +1,84 @@
+{
+    "name": "huseyinfiliz/guest",
+    "description": "Guest Login Mode for Flarum - Allow users to quickly post without registration",
+    "keywords": [
+        "flarum",
+        "extension",
+        "guest",
+        "login",
+        "anonymous",
+        "quick-access"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^1.8"
+    },
+    "authors": [
+        {
+            "name": "Huseyin Filiz",
+            "email": "mysuperuser01@gmail.com",
+            "role": "Developer",
+            "homepage": "https://www.huseyinfiliz.com/en"
+        }
+    ],
+    "homepage": "https://github.com/huseyinfiliz/guest",
+    "support": {
+        "issues": "https://github.com/huseyinfiliz/guest/issues",
+        "source": "https://github.com/huseyinfiliz/guest",
+        "forum": "https://discuss.flarum.org/d/37996-guest-mode-extension"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/huseyinfiliz"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "HuseyinFiliz\\Guest\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Guest Mode",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-user-secret",
+                "backgroundColor": "#3498db",
+                "color": "#ffffff"
+            }
+        },
+        "flarum-cli": {
+            "modules": {
+                "admin": true,
+                "forum": true,
+                "js": true,
+                "jsCommon": false,
+                "css": true,
+                "locale": true,
+                "gitConf": false,
+                "githubActions": false,
+                "prettier": false,
+                "typescript": false,
+                "bundlewatch": false,
+                "backendTesting": false,
+                "editorConfig": false,
+                "styleci": false
+            }
+        }
+    },
+    "devDependencies": {
+        "@babel/core": "^7.23.7",
+        "@babel/preset-env": "^7.23.8",
+        "@babel/runtime": "^7.23.9",
+        "babel-loader": "^8.3.0",
+        "webpack": "^5.89.0",
+        "webpack-cli": "^4.10.0"
+    },
+    "scripts": {
+        "build": "webpack --mode production",
+        "watch": "webpack --mode development --watch",
+        "dev": "webpack --mode development --watch"
+    }
+}

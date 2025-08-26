@@ -1,0 +1,46 @@
+// Minimal Flarum-native style
+.GuestLogin {
+  // Use Flarum's button mixins
+  .Button--color(@control-bg, @control-color);
+  
+  // Custom guest styling
+  border: 1px solid fade(@muted-color, 30%);
+  position: relative;
+  overflow: hidden;
+  width: inherit;
+  margin-bottom: 5%;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, fade(#fff, 20%), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  &:hover {
+    border-color: @muted-color;
+    
+    &:before {
+      left: 100%;
+    }
+  }
+  
+  .fas {
+    margin-right: 8px;
+  }
+}
+
+.GuestModal {
+  .Modal-body {
+    text-align: center;
+    
+    p {
+      color: @muted-color;
+      margin-bottom: 20px;
+    }
+  }
+}
